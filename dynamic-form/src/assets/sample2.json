@@ -1,0 +1,14 @@
+{
+    "paramName": "productName",
+    "displayComponent": {
+        "paramType": "textbox",
+        "placeholder": "Enter Product Name",
+        "fieldLabel": "Product Name",
+        "hidden": false,
+        "readonly": false,
+        "minLength": 10,
+        "maxLength": 50,
+        "multiple": false
+    }
+
+}

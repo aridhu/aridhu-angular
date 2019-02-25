@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div style="padding: 5px;">
+  <h4 style="text-align:center">Dynamic Form Sample</h4>
+  <mat-form-field>
+    <mat-select placeholder="Select One" [(value)]="userselection" (selectionChange)="buildDynamicForm($event)">
+      <mat-option *ngFor="let sample of samples" [value]="sample.value">
+        {{sample.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p style="width: 80%; margin-left: 10%;text-align:center; border:1px; background-color: palegoldenrod;">You selected: {{userselection}}</p>
+  <div *ngIf="dynamicformparameterarray" style="background-color: burlywood">
+       {{dynamicformparameterarray.paramName}}
+       <dynamic-form
+       [dynamicformparameterarray] = "dynamicformparameterarray"
+       (submit) = "submit($event)">
+       </dynamic-form>
+  </div>
+</div>
+<router-outlet></router-outlet>
