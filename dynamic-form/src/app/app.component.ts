@@ -31,8 +31,8 @@ export class AppComponent {
     this.backendservice.getFormDefinition($event.value)
             .subscribe(
               data => {
-                  console.log("Got JSON ", data);
-                  this.dynamicformparameterarray = data;
+                  this.dynamicformparameterarray = data.dynamicarray;
+                  console.log("Dynamic Form Array ", this.dynamicformparameterarray);
               },
               error => {
                   console.log("Error", error);

@@ -1,3 +1,7 @@
+import { FormGroup } from '@angular/forms';
+
+
+
 export interface DynamicFormParameter {
     paramName: string;
     paramValue: any;
@@ -13,4 +17,9 @@ export interface DisplayComponent {
     minLength: number;
     maxLength: number;
     multiple: boolean;
+}
+
+export interface DyField {
+    dynamicFormParameter: DynamicFormParameter;
+    group: FormGroup;
 }

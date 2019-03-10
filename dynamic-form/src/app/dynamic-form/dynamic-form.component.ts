@@ -27,10 +27,16 @@ get controls() {
     this.form = this.createFormGroup();
   }
   createFormGroup(): FormGroup {
-    const group = new FormGroup({
-      productName: new FormControl()
-   });
+    const group = this.fb.group({});
+    this.controls.forEach(control => {
+      let controlname = control.paramName;
+      group.addControl(controlname, this.createControl(control));
+    });
     return group;
+  }
+  createControl(control: DynamicFormParameter){
+    const {} = control;
+    return this.fb.control(control);
   }
   
 

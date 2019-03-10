@@ -3,7 +3,16 @@
    [formGroup]="form"
    (submit)="handleSubmit($event)">
    <div *ngIf="dynamicformparameterarray">
-     {{dynamicformparameterarray}}
+     <mat-grid-list cols="2" rowHeight="50%">
+       <mat-grid-tile 
+          *ngFor="let dynamicformparameter of dynamicformparameterarray;"
+          dynamicField
+          [dynamicFormParameter]="dynamicformparameter"
+          [group]="form">
+
+       </mat-grid-tile>
+
+     </mat-grid-list>
    </div>
 
 </form>
